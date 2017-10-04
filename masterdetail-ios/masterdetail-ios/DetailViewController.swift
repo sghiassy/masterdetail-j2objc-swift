@@ -23,20 +23,26 @@ class DetailViewController: UIViewController, JavaBeansPropertyChangeListener {
     
     @IBOutlet weak var words: UITextView!
     
-    let detailService: DetailService
-    let viewModel: DetailViewModel
+    var detailService: DetailService
+    var viewModel: DetailViewModel
     
-    required init?(coder decoder: NSCoder) {
-        detailService = FlatFileDetailService(storageService: LocalStorageService())
-        viewModel = DetailViewModel(detailService: detailService)
-        super.init(coder: decoder)
+    public init() {
+        self.detailService = FlatFileDetailService(storageService: LocalStorageService())
+        self.viewModel = DetailViewModel(detailService: detailService)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        self.detailService = FlatFileDetailService(storageService: LocalStorageService())
+        self.viewModel = DetailViewModel(detailService: detailService)
+        super.init(coder: aDecoder)
     }
     
     var listId: CInt?
     
     func configureView() {
         if let id = self.listId {
-            viewModel.init__WithInt(id)
+            viewModel.init__(with: id)
             
             // No need to set field values as the PropertyChangeListener given to the view model will set the fields
         }
@@ -44,16 +50,16 @@ class DetailViewController: UIViewController, JavaBeansPropertyChangeListener {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.addPropertyChangeListenerWithJavaBeansPropertyChangeListener(self)
+        viewModel.addPropertyChangeListener(with: self)
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
     }
 
     
-    override func viewWillDisappear(animated:Bool) {
+    override func viewWillDisappear(_ animated:Bool) {
         // This method will need to change if there is another view to forward to in addition to the
         // view to go back to.
-        viewModel.saveWithNSString(self.listTitle.text, withNSString: self.words.text)
+        viewModel.save(with: self.listTitle.text, with: self.words.text)
         super.viewWillDisappear(animated)
     }
     
@@ -62,19 +68,19 @@ class DetailViewController: UIViewController, JavaBeansPropertyChangeListener {
         // Dispose of any resources that can be recreated.
     }
     
-    func propertyChangeWithJavaBeansPropertyChangeEvent(event: JavaBeansPropertyChangeEvent!) {
+    func propertyChange(with event: JavaBeansPropertyChangeEvent!) {
         
         switch event.getPropertyName() {
             
         case DetailViewModel_TITLE:
             if let textfield = listTitle {
-                if let newValue: AnyObject = event.getNewValue() {
+                if let newValue: AnyObject = event.getNewValue() as AnyObject {
                     textfield.text = newValue as? String
                 }
             }
         case DetailViewModel_WORDS:
             if let textfield = words {
-                if let newValue: AnyObject = event.getNewValue() {
+                if let newValue: AnyObject = event.getNewValue() as AnyObject {
                     textfield.text = newValue as! String
                 }
             }

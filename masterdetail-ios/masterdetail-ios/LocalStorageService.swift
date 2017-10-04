@@ -23,10 +23,10 @@ class LocalStorageService: NSObject, StorageService {
     
     func getStoragePath() -> JavaIoFile {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true) 
+        let paths = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true) 
         
         let basePath = paths.count > 0 ? paths[0] : NSTemporaryDirectory()
         
-        return JavaIoFile(NSString: basePath)
+        return JavaIoFile(nsString: basePath)
     }
 }

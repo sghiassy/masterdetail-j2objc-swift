@@ -291,9 +291,11 @@
 				TargetAttributes = {
 					4A71CCBD19EF652C00A3535F = {
 						CreatedOnToolsVersion = 6.0.1;
+						LastSwiftMigration = 0830;
 					};
 					4A71CCD419EF652C00A3535F = {
 						CreatedOnToolsVersion = 6.0.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = 4A71CCBD19EF652C00A3535F;
 					};
 				};
@@ -492,6 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Kirk-Vogen.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/masterdetail-ios/masterdetail-ios-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -513,6 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Kirk-Vogen.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_DIR}/masterdetail-ios/masterdetail-ios-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -532,6 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Kirk-Vogen.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/masterdetail-ios.app/masterdetail-ios";
 			};
 			name = Debug;
@@ -548,6 +553,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Kirk-Vogen.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/masterdetail-ios.app/masterdetail-ios";
 			};
 			name = Release;
