@@ -1,0 +1,18 @@
+{
+  "name": "masterdetail-j2objc-swift",
+  "version": "1.0.0",
+  "description": "Sample project uses J2ObjC to share Java application logic between Android and iOS master-detail apps",
+  "scripts": {
+    "x": "open masterdetail-ios/masterdetail-ios.xcodeproj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sghiassy/masterdetail-j2objc-swift.git"
+  },
+  "author": "kirkvogen",
+  "license": "Apache License Version 2.0, January 2004",
+  "bugs": {
+    "url": "https://github.com/kirkvogen/masterdetail-j2objc-swift/issues"
+  },
+  "homepage": "https://github.com/kirkvogen/masterdetail-j2objc-swift#readme"
+}
