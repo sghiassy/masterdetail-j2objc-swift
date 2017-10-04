@@ -21,7 +21,7 @@ DerivedData
 project.xcworkspace
 
 ##### Code Editor Settings
-.idea/*
+.idea/**/*
 .vscode/
 
 
